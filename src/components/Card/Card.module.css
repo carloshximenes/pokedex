@@ -1,0 +1,38 @@
+.card {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding: 0px 15px;
+    height: 130px;
+    background: url(../../assets/image/watermark-pokeball.svg) right center
+        no-repeat rgb(181, 185, 196);
+    cursor: pointer;
+}
+
+.number {
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+.name {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-transform: capitalize;
+    text-shadow: rgb(150 150 150 / 30%) 1px 1px 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.types {
+    display: inline-grid;
+    gap: 5px 10px;
+    grid-area: auto / auto / auto / auto;
+    grid-auto-flow: column;
+    margin-top: 10px;
+}

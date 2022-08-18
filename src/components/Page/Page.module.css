@@ -1,0 +1,9 @@
+.page {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    margin: 0px auto;
+    padding: 35px 25px;
+    width: 100%;
+    max-width: 1300px;
+}
