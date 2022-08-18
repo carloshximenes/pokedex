@@ -1,14 +1,15 @@
 import hexToRgba from "hex-rgba";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { pokemonColours } from "../../assets/js/pokemon-type-colours";
-import Details from "../Details/Details";
+import { pokemonDetailsActions } from "../../store/pokedex/pokemon-details-slice";
 import Type from "../Type/Type";
 import classes from "./Card.module.css";
 
 const Card = (props) => {
+    const dispatch = useDispatch();
     const { url } = props;
     const [pokemon, setPokemon] = useState();
-    const [showDetails, setShowDetails] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -37,15 +38,15 @@ const Card = (props) => {
         return hexToRgba(hexColor, 70);
     };
 
-    const showDetailsHandler = () => {
-        setShowDetails(true);
+    const detailsHandler = () => {
+        dispatch(pokemonDetailsActions.showDetails(pokemon));
     };
 
     return (
         <>
             {pokemon && (
                 <div
-                    onClick={showDetailsHandler}
+                    onClick={detailsHandler}
                     className={classes.card}
                     style={{
                         backgroundColor: getPokemonBackground(
@@ -72,7 +73,6 @@ const Card = (props) => {
                     </div>
                 </div>
             )}
-            {showDetails && <Details pokemon={pokemon} />}
         </>
     );
 };

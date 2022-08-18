@@ -1,0 +1,140 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    height: 100%;
+    place-content: center;
+}
+
+.modal {
+    position: absolute;
+    top: 10vh;
+    z-index: 100;
+    background: rgb(255, 255, 255);
+    max-width: 600px;
+    width: 100%;
+    height: 500px;
+    border-radius: 35px;
+    overflow: hidden;
+    margin: 15px;
+    display: inline-flex;
+}
+
+.infos {
+    background-color: rgb(139, 190, 138);
+    padding: 50px 35px;
+    text-align: center;
+    position: relative;
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+}
+
+.infos::before {
+    position: absolute;
+    z-index: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/image/watermark-pokeball.svg);
+    background-repeat: no-repeat;
+    background-position: center top 106px;
+    background-size: cover;
+    left: 0px;
+    top: 0px;
+}
+
+.name {
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    text-transform: capitalize;
+    margin: 0px;
+}
+
+.data {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.baseStats {
+    padding: 35px;
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+}
+
+.baseStats ul {
+    list-style: none;
+    padding: 0;
+}
+
+.baseStats li {
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.abilities {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+}
+
+.listAbilities {
+    margin-top: 25px;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr;
+    list-style: none;
+    padding: 0;
+}
+
+.ability {
+    background: rgb(98, 185, 87);
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+    font: bold;
+    font-size: 16px;
+}
+
+.statDescription {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.statBar {
+    height: 4px;
+    background: rgb(98, 185, 87);
+    position: relative;
+    border-radius: 15px;
+}
+
+.statBar::after {
+    height: 4px;
+    width: 200px;
+    position: relative;
+    background: rgb(245, 245, 245);
+    display: block;
+    content: "";
+    border-radius: 15px;
+    z-index: -1;
+}
+
+.total {
+    font-size: 18px;
+}
