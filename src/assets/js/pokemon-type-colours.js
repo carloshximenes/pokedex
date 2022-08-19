@@ -1,3 +1,5 @@
+import hexToRgba from "hex-rgba";
+
 export const pokemonColours = {
     normal: "#A8A77A",
     fire: "#EE8130",
@@ -17,5 +19,10 @@ export const pokemonColours = {
     dark: "#705746",
     steel: "#B7B7CE",
     fairy: "#D685AD",
-    default: '#777'
+    default: "#777",
+};
+
+export const getPokemonColor = (type, opacity = 0) => {
+    let hexColor = pokemonColours[type] || pokemonColours.default;
+    return hexToRgba(hexColor, opacity);
 };
