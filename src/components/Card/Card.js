@@ -27,7 +27,7 @@ const Card = (props) => {
         } catch (error) {
             console.log(error.message);
         }
-    }, []);
+    }, [url]);
 
     const showLeadingZeros = (number) => {
         return ("000" + number).slice(-3);

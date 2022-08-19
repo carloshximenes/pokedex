@@ -1,7 +1,9 @@
+import { PokeApi } from "../../enviroments";
 import { pokedexActions } from "./pokedex-slice";
 
-export const fetchPokemonData = (url) => {
+export const fetchPokemonData = (page) => {
     return async (dispatch) => {
+        let url = PokeApi + "pokemon?offset=" + (page - 1) * 20 + "&limit=20";
         const fetchData = async () => {
             const response = await fetch(url);
 
@@ -19,8 +21,6 @@ export const fetchPokemonData = (url) => {
             dispatch(
                 pokedexActions.updatePokedex({
                     count: pokemonData.count,
-                    next: pokemonData.next,
-                    previous: pokemonData.previous,
                     results: pokemonData.results || [],
                 })
             );
