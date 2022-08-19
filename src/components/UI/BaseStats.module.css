@@ -1,0 +1,44 @@
+.baseStats {
+    padding: 35px;
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+}
+
+.baseStats ul {
+    list-style: none;
+    padding: 0;
+}
+
+.baseStats li {
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.statDescription {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.statBar {
+    height: 4px;
+    background: rgb(98, 185, 87);
+    position: relative;
+    border-radius: 15px;
+}
+
+.statBar::after {
+    height: 4px;
+    width: 200px;
+    position: relative;
+    background: rgb(245, 245, 245);
+    display: block;
+    content: "";
+    border-radius: 15px;
+    z-index: -1;
+}
+
+.total {
+    font-size: 18px;
+}

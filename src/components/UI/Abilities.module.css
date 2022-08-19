@@ -1,0 +1,25 @@
+.abilities {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+}
+
+.listAbilities {
+    margin-top: 25px;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr;
+    list-style: none;
+    padding: 0;
+}
+
+.ability {
+    background: rgb(98, 185, 87);
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-align: center;
+    text-transform: capitalize;
+    font: bold;
+    font-size: 16px;
+}

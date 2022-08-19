@@ -1,7 +1,6 @@
-import hexToRgba from "hex-rgba";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { pokemonColours } from "../../assets/js/pokemon-type-colours";
+import { getPokemonColor } from "../../assets/js/pokemon-type-colours";
 import { pokemonDetailsActions } from "../../store/pokedex/pokemon-details-slice";
 import Type from "../Type/Type";
 import classes from "./Card.module.css";
@@ -33,11 +32,6 @@ const Card = (props) => {
         return ("000" + number).slice(-3);
     };
 
-    const getPokemonBackground = (type) => {
-        let hexColor = pokemonColours[type] || pokemonColours.default;
-        return hexToRgba(hexColor, 70);
-    };
-
     const detailsHandler = () => {
         dispatch(pokemonDetailsActions.showDetails(pokemon));
     };
@@ -49,8 +43,9 @@ const Card = (props) => {
                     onClick={detailsHandler}
                     className={classes.card}
                     style={{
-                        backgroundColor: getPokemonBackground(
-                            pokemon.types[0].type.name
+                        backgroundColor: getPokemonColor(
+                            pokemon.types[0].type.name,
+                            70
                         ),
                     }}
                 >
