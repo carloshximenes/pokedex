@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemonColor } from "../../assets/js/pokemon-type-colours";
 import { pokemonDetailsActions } from "../../store/pokedex/pokemon-details-slice";
-import Abilities from "./Abilities";
-import BaseStats from "./BaseStats";
-import classes from "./DetailModal.module.css";
+import Abilities from "../Abilities/Abilities";
+import BaseStats from "../BaseStats/BaseStats";
+import classes from "./DetailsModal.module.css";
 
-const DetailModal = (props) => {
+const DetailsModal = (props) => {
     const dispatch = useDispatch();
     const pokemon = useSelector((state) => state.details.pokemon);
 
@@ -40,4 +40,4 @@ const DetailModal = (props) => {
     );
 };
 
-export default DetailModal;
+export default DetailsModal;

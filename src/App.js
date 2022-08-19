@@ -3,7 +3,7 @@ import "./App.css";
 import "./assets/css/pagination.css";
 import Card from "./components/Card/Card";
 import Page from "./components/Page/Page";
-import Details from "./components/UI/DetailModal";
+import DetailsModal from "./components/DetailsModal/DetailsModal";
 
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -45,7 +45,7 @@ function App() {
                 onChange={updatePage}
                 current={currentPage}
             />
-            {showModal && <Details />}
+            {showModal && <DetailsModal />}
         </>
     );
 }
